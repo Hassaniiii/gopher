@@ -1,17 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/Hassaniiii/gopher/models"
+	"github.com/Hassaniiii/gopher/controllers"
 )
 
 func main() {
-	user := models.User {
-		ID		: 2,
-		FirstName	: "Hassan",
-		LastName	: "Shahbazi",
-	}
-
-	fmt.Println(user)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
